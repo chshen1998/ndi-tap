@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { createServer } from 'http';
+import {handleCreateInfoRequest} from './controller/info-request-controller.js'
 
 const app = express();
 app.use(express.urlencoded({ extended: true }))
@@ -13,5 +14,7 @@ const httpServer = createServer(app)
 app.get('/', (req, res) => {
     res.send('Hello World');
 });
+
+app.post('/request', handleCreateInfoRequest)
 
 httpServer.listen(8000);

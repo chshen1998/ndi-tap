@@ -1,4 +1,5 @@
 import 'dotenv/config'
+import InfoRequestModel from './info-request-model.js';
 
 //Set up mongoose connection
 import mongoose from 'mongoose';
@@ -9,3 +10,9 @@ mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+export async function createInfoRequest(requester) {
+    return new InfoRequestModel({
+        requester: requester
+    })
+}
