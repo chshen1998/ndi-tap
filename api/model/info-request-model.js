@@ -10,10 +10,6 @@ let InfoRequestSchema = new Schema({
     requestee: {
         type: String,
         required: false,
-    },
-    info_categories: {
-        type: String,
-        required: false,
     }
 }, {timestamps: true})
 
