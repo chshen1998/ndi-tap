@@ -12,3 +12,7 @@ export async function getPendingInfoRequest(irCode) {
   const results = await redisClient.get(irCode)
   return results
 }
+
+export async function deletePendingInfoRequest(irCode) {
+  await redisClient.del(irCode)
+}
