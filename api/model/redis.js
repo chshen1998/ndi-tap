@@ -4,15 +4,23 @@ let redisClient = redis.createClient();
 redisClient.on("error", (error) => console.error(`Error : ${error}`));
 redisClient.connect();
 
-export async function addPendingInfoRequest(requester, irCode) {
-  await redisClient.set(irCode, requester)
+export async function addToCache(irCode, requesterData) {
+  try {
+    await redisClient.set(irCode, JSON.stringify(requesterData))
+  } catch (err) {
+    console.log(err)
+  }
 }
 
-export async function getPendingInfoRequest(irCode) {
-  const results = await redisClient.get(irCode)
-  return results
+export async function getFromCache(irCode) {
+  try {
+    const requester = await redisClient.get(irCode)
+    return JSON.parse(requester)
+  } catch (err) {
+    return null
+  }
 }
 
-export async function deletePendingInfoRequest(irCode) {
+export async function deleteFromCache(irCode) {
   await redisClient.del(irCode)
 }
