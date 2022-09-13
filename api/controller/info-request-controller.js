@@ -6,6 +6,10 @@ import {APP_CONFIG, MYINFO_CONNECTOR_CONFIG} from '../config/config.js'
 import { addToCache, getFromCache, deleteFromCache } from '../model/redis.js';
 import {createInfoRequest} from '../service/info-request-service.js'
 
+// Opens a information request with the requester
+// 
+// Emits openedIR event with information request code
+// Emits timeoutIR event if no requestee has approved the request within 120 seconds
 export async function handleOpenInfoRequest(socket) {
     const irCode = uniqid()
     socket.join(irCode)
@@ -24,6 +28,11 @@ export async function handleOpenInfoRequest(socket) {
     return
 }
 
+
+// Finds the open information request corresponding to the information request code and adds the requestee
+//
+// Emits joinedIR event with requstee's inforamtion if information request is found 
+// Emits invalidIR event if no information request exists that corresponds to the code
 export async function handleJoinInfoRequest(socket, irCode) {
     const exists = await getFromCache(irCode)
     if (!exists) {
@@ -40,6 +49,10 @@ export async function handleJoinInfoRequest(socket, irCode) {
     return
 }
 
+// Finds the open information request corresponding to the information request code and adds the requestee
+//
+// Emits approvedIR event with requestee's information to everyone involved in the information request 
+// Emits invalidIR event if no information request exists that corresponds to the code
 export async function handleApproveInfoRequest(io, socket, irCode) {
     const requester = await getFromCache(irCode)
     if (!requester) {
@@ -57,10 +70,12 @@ export async function handleApproveInfoRequest(io, socket, irCode) {
     return
 }
 
+// Delets user information from cache when user disconnects from server socket
 export async function handleDisconnect(socket) {
     await deleteFromCache(socket.id)
 }
 
+// Retrieves the user personal data from the MyInfo resource server
 export async function handleGetPersonData(socket, authCode, state) {
     try {
         var txnNo = randomBytes(10).toString("hex");
@@ -86,6 +101,7 @@ export async function handleGetPersonData(socket, authCode, state) {
     }
 }
 
+// Checks if the informaion request has been approved by a requestee after 120 seconds
 async function receivedInfoWithin120s(irCode) {
     await delay(120000)
     const requester = getFromCache(irCode)
@@ -96,6 +112,7 @@ async function receivedInfoWithin120s(irCode) {
     return true
 }
 
+// Parses the user personal information from MyInfo server into hashamp data structure
 function parseData(data) {
     var map = {}
     map['uinfin'] = data.uinfin.value

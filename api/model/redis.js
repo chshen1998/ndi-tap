@@ -1,5 +1,6 @@
 import redis from 'redis'
 
+// Set up redis cache connection
 let redisClient = redis.createClient();
 redisClient.on("error", (error) => console.error(`Error : ${error}`));
 redisClient.connect();

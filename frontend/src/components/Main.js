@@ -56,7 +56,7 @@ const Main = () => {
 
       socket.on('dataReceived', () => {
         handleClose()
-        setMessage("Successful login to MyInfo")
+        setMessage("Successful login to Singpass")
       })
 
       socket.on('myinfoError', () => {
