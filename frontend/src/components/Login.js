@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
-import Box from '@mui/material/Box';
+import {API_URL} from "../config/config"
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import myinfo from '../assets/myinfo.png'
@@ -29,7 +29,7 @@ var environment;
 
 const Login = () => {
     useEffect(() => {
-        axios.get(process.env.API_URL + '/getEnv').then((response) => {
+        axios.get(API_URL + '/getEnv').then((response) => {
             clientId = response.data.clientId;
             redirectUrl = response.data.redirectUrl;
             attributes = response.data.attributes;

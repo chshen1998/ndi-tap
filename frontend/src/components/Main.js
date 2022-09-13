@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
+import {API_URL} from "../config/config"
 import io from "socket.io-client";
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -10,7 +11,7 @@ import MyInfoModal from './MyInfoModal'
 import MyInfoForm from './MyInfoForm'
 
 
-const socket = io(process.env.API_URL, {
+const socket = io(API_URL, {
   withCredentials: true,
   transports: ['websocket'],
 })
