@@ -29,7 +29,7 @@ var environment;
 
 const Login = () => {
     useEffect(() => {
-        axios.get('http://localhost:8000/getEnv').then((response) => {
+        axios.get(process.env.API_URL + '/getEnv').then((response) => {
             clientId = response.data.clientId;
             redirectUrl = response.data.redirectUrl;
             attributes = response.data.attributes;

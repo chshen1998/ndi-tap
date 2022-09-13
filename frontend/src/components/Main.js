@@ -10,7 +10,7 @@ import MyInfoModal from './MyInfoModal'
 import MyInfoForm from './MyInfoForm'
 
 
-const socket = io("http://localhost:8000", {
+const socket = io(process.env.API_URL, {
   withCredentials: true,
   transports: ['websocket'],
 })
