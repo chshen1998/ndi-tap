@@ -12,6 +12,9 @@
     4. [Cloud Hosting](https://github.com/chshen1998/send-secure-ndi-tap/wiki/Technical-Documentation#cloud-hosting)
 
 # Demo 
+
+![User Experience Diagram](user-flow.png)
+
 YouTube link: https://youtu.be/L0J9PzdZ3a8 
 
 SendSecure link: https://main.d16toymsnxyjhr.amplifyapp.com/
