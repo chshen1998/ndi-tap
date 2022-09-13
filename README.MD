@@ -9,6 +9,7 @@
     1. [Architecture Overview](https://github.com/chshen1998/send-secure-ndi-tap/wiki/Technical-Documentation#architecture-overview)
     2. [Client & Server Sockets](https://github.com/chshen1998/send-secure-ndi-tap/wiki/Technical-Documentation#client--server-sockets)
     3. [Database & Caching](https://github.com/chshen1998/send-secure-ndi-tap/wiki/Technical-Documentation#database--caching)
+    4. [Cloud Hosting](https://github.com/chshen1998/send-secure-ndi-tap/wiki/Technical-Documentation#cloud-hosting)
 
 ## Demo Video
 YouTube link: https://youtu.be/L0J9PzdZ3a8 
