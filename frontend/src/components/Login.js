@@ -29,7 +29,7 @@ var environment;
 
 const Login = () => {
     useEffect(() => {
-        axios.get('https://cors-everywhere.herokuapp.com/http://54.169.92.210:8000/getEnv').then((response) => {
+        axios.get(process.env.API_URL + '/getEnv').then((response) => {
             clientId = response.data.clientId;
             redirectUrl = response.data.redirectUrl;
             attributes = response.data.attributes;

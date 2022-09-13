@@ -10,7 +10,7 @@ import MyInfoModal from './MyInfoModal'
 import MyInfoForm from './MyInfoForm'
 
 
-const socket = io('https://cors-everywhere.herokuapp.com/http://54.169.92.210:8000', {
+const socket = io(process.env.API_URL, {
   withCredentials: true,
   transports: ['websocket'],
 })
