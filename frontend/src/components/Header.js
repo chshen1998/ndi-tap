@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import singpass_logo from './singpass_logo.png'
+import singpass_logo from '../assets/singpass_logo.png'
 
 const Header = ({title}) => {
   return (

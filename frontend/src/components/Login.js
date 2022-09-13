@@ -3,7 +3,7 @@ import axios from 'axios';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import myinfo from './myinfo.png'
+import myinfo from '../assets/myinfo.png'
 
 const style = {
     position: 'absolute',
