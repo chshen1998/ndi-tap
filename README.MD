@@ -1,4 +1,4 @@
-# SendSecure
+# SendSecure Documentation
 1. [User Documentation](https://github.com/chshen1998/ndi-tap/wiki/User-Documentation)
     1. [Background](https://github.com/chshen1998/ndi-tap/wiki/User-Documentation#background)
     2. [Problem Solution](https://github.com/chshen1998/send-secure-ndi-tap/wiki/User-Documentation#problem-solution)
