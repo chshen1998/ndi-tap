@@ -15,6 +15,6 @@ YouTube link: https://youtu.be/L0J9PzdZ3a8
 
 SendSecure link: https://main.d16toymsnxyjhr.amplifyapp.com/
 
-**IMPORTANT: However, due to the fact that this application is not on-boarded with MyInfo, `http://localhost:3001/callback` is required to be set as the callback url when using authentication with Singpass. As a result, the Authentication with Singpass cannot work when the frontend hosted on AWS. To see full working demo of SendSecure, please view the YouTube link.
+**IMPORTANT: However, due to the fact that this application is not on-boarded with MyInfo, `http://localhost:3001/callback` is required to be set as the callback url when using authentication with Singpass. As a result, the Authentication with Singpass cannot work when the frontend hosted on AWS Amplify. To see full working demo of SendSecure, please view the YouTube link.
 
 ![MyInfo FAQ](myinfo-faq.png)
