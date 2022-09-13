@@ -14,7 +14,6 @@ const App = () => {
   return (
     <div className="background">
       <div className="container">
-        <SocketProvider>
           <Header/>
           <Router>
             <Routes>
@@ -22,7 +21,6 @@ const App = () => {
               <Route path="/callback" element={<Main/>}/>
             </Routes>
           </Router>
-        </SocketProvider>
       </div>
     </div>
 
