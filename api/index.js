@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { createServer } from 'http';
-import {APP_CONFIG} from './config/config.js'
+import {APP_CONFIG, ORIGIN} from './config/config.js'
 import {Server} from 'socket.io'
 import {handleDisconnect, handleGetPersonData, handleOpenInfoRequest, handleJoinInfoRequest, handleApproveInfoRequest} from './controller/info-request-controller.js'
 
@@ -15,7 +15,7 @@ app.options('*', cors())
 const httpServer = createServer(app)
 const io = new Server(httpServer, {
     cors: {
-        origin: "http://localhost:3001",
+        origin: ORIGIN,
     },
 })
 

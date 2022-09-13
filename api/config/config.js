@@ -1,5 +1,7 @@
 import 'dotenv/config'
 
+export let ORIGIN=process.env.ORIGIN
+
 export let APP_CONFIG = {
     'DEMO_APP_CLIENT_ID': process.env.CLIENT_ID,
     'DEMO_APP_CLIENT_SECRET': process.env.CLIENT_SECRET,
